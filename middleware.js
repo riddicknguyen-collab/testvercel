@@ -1,6 +1,6 @@
 export default async function middleware(request) {
   const authorization = request.headers.get('authorization');
-  const expectedUsername = 'admin';
+  const expectedUsername = process.env.SITE_USERNAME;
   const expectedPassword = process.env.SITE_PASSWORD;
 
   if (authorization?.startsWith('Basic ')) {
